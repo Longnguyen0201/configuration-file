@@ -1,0 +1,5 @@
+
+server:
+  port: 7005
+  servlet:
+    context-path: /task-scheduler
