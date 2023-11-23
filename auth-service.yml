@@ -1,12 +1,11 @@
-
 server:
   port: 7090
   servlet:
     context-path: /auth // add context and configure it into gateway server yml
 jwt:
   auth:
-  converter:
-  resource-id: authenticationClientId
+    converter:
+      resource-id: authenticationClientId
 keycloak:
   realm: bisky-music
   domain: keycloak.codewithbisky.com
@@ -14,12 +13,12 @@ keycloak:
   adminClientSecret: your_secret
   client: authenticationClientId
   urls:
-  auth: https://${keycloak.domain}
+    auth: https://${keycloak.domain}
 spring:
   profile:
-  active: production
+    active: production
   security:
-  oauth2:
-  resourceserver:
-  jwt:
-  issuer-uri: https://${keycloak.domain}/realms/${keycloak.realm}
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://${keycloak.domain}/realms/${keycloak.realm}
